@@ -1,5 +1,6 @@
 package test;
 
+import main.Fan;
 import main.CeilingFan;
 import org.junit.jupiter.api.Test;
 
@@ -8,56 +9,70 @@ import static org.junit.jupiter.api.Assertions.*;
 class CeilingFanTest {
 
     @Test
-    public void whenCheckingInitialState_returnInitialState() {
+    public void whenCeilingFanIsInitiated_thenExpectZeroSpeedAndClockwiseDirection() {
         CeilingFan fan = new CeilingFan();
         assertEquals(0, fan.getCurrentSpeed(), "Initial speed should be 0");
-        assertFalse(fan.getCurrentDirection(), "Initial direction should be forward");
+        assertEquals(Fan.Direction.CLOCKWISE, fan.getCurrentDirection(), "Initial direction should be forward");
+        assertFalse(fan.isRunning(), "Fan is in OFF state");
     }
 
     @Test
-    public void whenSpeedChangeOccur_thenSpeedChangesAsExpected() {
+    public void whenIncreasedSpeed_thenExpectSpeedIncreasesFrom1To3AndOff() {
         CeilingFan fan = new CeilingFan();
 
-        fan.speedChange();
+        fan.increaseSpeed();
         assertEquals(1, fan.getCurrentSpeed(), "Speed should be 1 after first speed change");
+        assertTrue(fan.isRunning(), "Fan is in ON state");
 
-        fan.speedChange();
+        fan.increaseSpeed();
         assertEquals(2, fan.getCurrentSpeed(), "Speed should be 2 after second speed change");
+        assertTrue(fan.isRunning(), "Fan is in ON state");
 
-        fan.speedChange();
+        fan.increaseSpeed();
         assertEquals(3, fan.getCurrentSpeed(), "Speed should be 3 after third speed change");
+        assertTrue(fan.isRunning(), "Fan is in ON state");
 
-        fan.speedChange();
+        fan.increaseSpeed();
         assertEquals(0, fan.getCurrentSpeed(), "Speed should return to 0 after fourth speed change");
+        assertFalse(fan.isRunning(), "Fan is in OFF state");
     }
 
     @Test
-    public void whenDirectionReversed_thenDirectionStatusIsUpdated() {
+    public void whenDirectionIsFlipped_thenExpectDirectionChangesFromClockwiseToAnticlockwiseAndViceVersa() {
         CeilingFan fan = new CeilingFan();
 
-        fan.setDirection();
-        assertTrue(fan.getCurrentDirection(), "Direction set to true");
+        fan.flipDirection();
+        assertEquals(Fan.Direction.ANTICLOCKWISE, fan.getCurrentDirection(), "Direction set to true");
 
-        fan.setDirection();
-        assertFalse(fan.getCurrentDirection(), "Direction set to false");
+        fan.flipDirection();
+        assertEquals(Fan.Direction.CLOCKWISE, fan.getCurrentDirection(), "Direction set to false");
     }
 
     @Test
-    public void whenDirectionAndSpeedAreChangedSimultaneously_thenTheActionsAreAsExpected() {
+    public void whenDirectionAndSpeedAreChangedSimultaneously_thenExpectSpeedGoesMaximumTo3AndOffAndDirectionFlipsClockwiseAndAntiClockwise() {
         CeilingFan fan = new CeilingFan();
 
-        fan.speedChange();
-        fan.setDirection();
+        assertFalse(fan.isRunning(), "Fan is in OFF state");
+
+        fan.increaseSpeed();
+        fan.flipDirection();
 
         assertEquals(1, fan.getCurrentSpeed(), "Speed should be 1 after first speed change");
-        assertTrue(fan.getCurrentDirection(), "Direction should be reversed after first direction change");
+        assertEquals(Fan.Direction.ANTICLOCKWISE, fan.getCurrentDirection(), "Direction should be reversed after first direction change");
+        assertTrue(fan.isRunning(), "Fan is in ON state");
 
-        fan.speedChange();
+        fan.increaseSpeed();
         assertEquals(2, fan.getCurrentSpeed(), "Speed should be 2 after second speed change");
-        assertTrue(fan.getCurrentDirection(), "Direction should still be reversed");
+        assertEquals(Fan.Direction.ANTICLOCKWISE, fan.getCurrentDirection(), "Direction should still be reversed");
 
-        fan.setDirection();
+        fan.flipDirection();
         assertEquals(2, fan.getCurrentSpeed(), "Speed should still be 2");
-        assertFalse(fan.getCurrentDirection(), "Direction should now be changed to forward");
+        assertEquals(Fan.Direction.CLOCKWISE, fan.getCurrentDirection(), "Direction should now be changed to forward");
+        assertTrue(fan.isRunning(), "Fan is in ON state");
+
+        fan.increaseSpeed();
+        fan.increaseSpeed();
+
+        assertFalse(fan.isRunning(), "Fan is in OFF state");
     }
 }

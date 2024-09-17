@@ -1,36 +1,49 @@
 package main;
 
-public class CeilingFan {
+public class CeilingFan implements Fan {
 
-    private int speedControl;
-    private boolean direction;
+    private int currentSpeed;
+    private Direction direction;
 
+    /**
+     * Initializing the values for Ceiling Fan
+     *
+     * @param -
+     * currentSpeed - assuming the currentSpeed to be 0 at the start.
+     * direction - assuming the direction is CLOCKWISE when the CeilingFan starts.
+     */
     public CeilingFan() {
-        this.speedControl = 0;
-        this.direction = false; // false is forward and true is reverse
+        this.currentSpeed = 0;
+        this.direction = Direction.CLOCKWISE;
     }
 
-    public void speedChange() {
-        if(speedControl == 3) {
-            speedControl = 0;
-        } else {
-            speedControl++;
-        }
+    @Override
+    public void increaseSpeed() {
+        currentSpeed = (currentSpeed + 1) % (MAX_SPEED + 1);
     }
 
-    public void setDirection() {
-        direction = !direction;
+    @Override
+    public void flipDirection() {
+        direction = getCurrentDirection() == Direction.CLOCKWISE ? Direction.ANTICLOCKWISE : Direction.CLOCKWISE;
     }
 
+    @Override
     public int getCurrentSpeed() {
-        return speedControl;
+        return currentSpeed;
     }
 
-    public boolean getCurrentDirection() {
+    @Override
+    public Fan.Direction getCurrentDirection() {
         return direction;
+    }
+
+    @Override
+    public boolean isRunning() {
+        return getCurrentSpeed() != 0;
     }
 
     public static void main(String[] args) {
 
     }
+
 }

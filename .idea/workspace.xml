@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96a255cb-f669-4555-9590-eab4ea458eee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CeilingFanImplementation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/CeilingFan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/CeilingFanTest.java" afterDir="false" />
+    <list default="true" id="96a255cb-f669-4555-9590-eab4ea458eee" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/Fan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/CeilingFan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/CeilingFan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/CeilingFanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/CeilingFanTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +22,27 @@
         <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="package-info" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ashwinibala"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ashwinibala/CeilingFanImplementation.git",
+    "accountId": "20f418cd-ca5c-45ee-97a5-7e542e9b15d4"
+  }
+}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 0
@@ -46,6 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.CeilingFanTest.executor": "Run",
     "JUnit.CeilingFanTest.testInitialState.executor": "Run",
     "Maven.CeilingFanImplementation [clean].executor": "Run",
     "Maven.CeilingFanImplementation [test].executor": "Run",
@@ -67,7 +77,22 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CeilingFanTest">
+    <configuration name="CeilingFanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CeilingFanImplementation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.CeilingFanTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CeilingFanTest.testInitialState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CeilingFanImplementation" />
       <extension name="coverage">
@@ -86,6 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CeilingFanTest" />
         <item itemvalue="JUnit.CeilingFanTest.testInitialState" />
       </list>
     </recent_temporary>
@@ -99,6 +125,30 @@
       <option name="presentableId" value="Default" />
       <updated>1726535460790</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1726594198285</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726594198285</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>
