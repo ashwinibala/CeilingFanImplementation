@@ -2,11 +2,13 @@ package main;
 
 public class CeilingFan implements Fan {
 
+    int MAX_SPEED = 3;
     private int currentSpeed;
     private Direction direction;
 
     /**
      * Initializing the values for Ceiling Fan
+     * The current implementation is not thread safe as it does not have a mechanism at present for seamless parallel updates.
      *
      * @param -
      * currentSpeed - assuming the currentSpeed to be 0 at the start.

@@ -3,7 +3,6 @@ package test;
 import main.Fan;
 import main.CeilingFan;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CeilingFanTest {

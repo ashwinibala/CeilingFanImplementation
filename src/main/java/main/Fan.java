@@ -2,14 +2,12 @@ package main;
 
 public interface Fan {
 
-    int MAX_SPEED = 3; // Assuming max speed will be 3 as default
     enum Direction {
         CLOCKWISE, ANTICLOCKWISE
     }
 
     /**
-     * Increases the speed of the fan till max speed and then to off.
-     * It is not thread safe as it does not have a mechanism at present for seamless parallel updates.
+     * Increases the speed of the fan by one unit till max speed and then to off.
      *
      * @param - none
      * @return - none
@@ -18,7 +16,6 @@ public interface Fan {
 
     /**
      * Flips Direction of the fan.
-     * It is not thread safe as it does not have a mechanism at present for seamless parallel updates.
      *
      * @param - none
      * @return - none
