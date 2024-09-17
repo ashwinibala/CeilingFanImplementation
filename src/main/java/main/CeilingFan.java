@@ -2,7 +2,7 @@ package main;
 
 public class CeilingFan implements Fan {
 
-    public static final int MAX_SPEED = 3;
+    private static final int MAX_SPEED = 3;
     private int currentSpeed;
     private Direction direction;
 
